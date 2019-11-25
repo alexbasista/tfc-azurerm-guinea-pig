@@ -9,6 +9,12 @@ resource "azurerm_network_security_group" "test" {
   name                = "alex-test-nsg"
   location            = azurerm_resource_group.test.location
   resource_group_name = azurerm_resource_group.test.name
+
+  tags = {
+    Owner       = "alex"
+    Tool        = "Terraform"
+    Environment = "Lab"
+  }
 }
 
 resource "azurerm_network_security_rule" "test" {
